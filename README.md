@@ -2,7 +2,8 @@
 
 ## Introduction
 
-This repository contains my code from DataCamp tutorials.
+This repository contains my code from DataCamp tutorials. These instructions assume
+Python 3.11.1 was installed using pyenv.
 
 ## Setting Up
 
@@ -17,6 +18,7 @@ cd ~/src
 git clone https://github.com/conradhalling/datacamp.git
 
 # Create a virtual environment.
+pyenv global 3.11.1
 cd datacamp
 python3 -m venv venv
 
@@ -24,14 +26,7 @@ python3 -m venv venv
 source venv/bin/activate
 
 # Install required packages.
-pip3 install -U pip
-pip3 install -U setuptools
-pip3 install matplotlib
-pip3 install pandas
-pip3 install psycopg2
-pip3 install SQLAlchemy
-pip3 install jupyterlab
-pip3 install pymysql
+pip3 install -U -r requirements.txt
 ```
 
 ## Using the Notebooks

@@ -1,0 +1,8 @@
+pip
+setuptools
+jupyterlab
+matplotlib
+pandas
+psycopg2
+pymysql
+SQLAlchemy
