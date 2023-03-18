@@ -48,4 +48,5 @@ Before committing Jupyter notebook changes to the git repository, click on
 ## Courses
 
 - Introduction to Databases in Python
+- Introduction to NumPy
 - Statistical Thinking in Python Part 1
