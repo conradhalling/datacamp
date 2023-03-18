@@ -59,6 +59,7 @@ Before committing Jupyter notebook changes to the git repository, click on
 - Introduction to Data Science in Python
 - Introduction to Data Visualization with Matplotlib
 - Introduction to Databases in Python
+- Introduction to Importing Data in Python
 - Introduction to NumPy
 - Introductionn to Python
 - Object-Oriented Programming in Python
