@@ -50,6 +50,7 @@ Before committing Jupyter notebook changes to the git repository, click on
 - Data Manipulation with Pandas
 - Data Types for Data Science in Python
 - Intermediate Python
+- Introduction to Data Science in Python
 - Introduction to Data Visualization with Matplotlib
 - Introduction to Databases in Python
 - Introduction to NumPy
