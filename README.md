@@ -48,6 +48,7 @@ Before committing Jupyter notebook changes to the git repository, click on
 ## Courses
 
 - Data Manipulation with Pandas
+- Intermediate Python
 - Introduction to Databases in Python
 - Introduction to NumPy
 - Introductionn to Python
