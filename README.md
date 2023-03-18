@@ -14,7 +14,7 @@ Python 3.11.1 was installed using pyenv.
 
 ```shell
 # Clone the repository.
-cd ~/src
+cd ~/src/conradhalling
 git clone https://github.com/conradhalling/datacamp.git
 
 # Create a virtual environment.
@@ -35,17 +35,17 @@ pip3 install -U -r requirements.txt
 - start Jupyter lab
 
 ```shell
-cd ~/src/datacamp
+cd ~/src/conradhalling/datacamp
 source venv/bin/activate
 python3 -Xfrozen_modules=off -m jupyterlab
 ```
 
 ## Saving a Notebook
 
-Before committing notebook changes to the git repository, in the Jupyter Lab
-window, click on Edit > Clear All Outputs.
+Before committing Jupyter notebook changes to the git repository, click on
+"Edit" > "Clear All Outputs" and save the notebook.
 
 ## Courses
 
 - Introduction to Databases in Python
-
+- Statistical Thinking in Python Part 1

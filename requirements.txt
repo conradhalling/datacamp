@@ -5,4 +5,7 @@ matplotlib
 pandas
 psycopg2
 pymysql
+scikit-learn
+scipy
+seaborn
 SQLAlchemy
