@@ -8,6 +8,7 @@ Python 3.11.1 was installed using pyenv.
 ## Setting Up
 
 - clone the repository
+- install the hdf5 library
 - create a virtual environment and install the required packages
 - initialize the virtual environment
 - start Jupyter Lab
@@ -16,6 +17,9 @@ Python 3.11.1 was installed using pyenv.
 # Clone the repository.
 cd ~/src/conradhalling
 git clone https://github.com/conradhalling/datacamp.git
+
+# Install the hdf5 library
+brew install hdf5
 
 # Create a virtual environment.
 pyenv global 3.11.1
@@ -26,13 +30,14 @@ python3 -m venv venv
 source venv/bin/activate
 
 # Install required packages.
-pip3 install -U -r requirements.txt
+pip install --upgrade pip setuptools
+pip install -r requirements.txt
 ```
 
 ## Using the Notebooks
 
 - initialize the virtual environment
-- start Jupyter lab
+- start Jupyter Lab
 
 ```shell
 cd ~/src/conradhalling/datacamp
@@ -49,6 +54,7 @@ Before committing Jupyter notebook changes to the git repository, click on
 
 - Data Manipulation with Pandas
 - Data Types for Data Science in Python
+- Exploratory Data Analysis in Python
 - Intermediate Python
 - Introduction to Data Science in Python
 - Introduction to Data Visualization with Matplotlib

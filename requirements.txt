@@ -1,5 +1,3 @@
-pip
-setuptools
 jupyterlab
 matplotlib
 pandas
@@ -10,3 +8,10 @@ scikit-learn
 scipy
 seaborn
 SQLAlchemy
+h5py
+sas7bdat
+openpyxl
+statsmodels
+tables
+empiricaldist
+
