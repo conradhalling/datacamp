@@ -50,11 +50,9 @@ python3 -Xfrozen_modules=off -m jupyterlab
 Before committing Jupyter notebook changes to the git repository, click on
 "Edit" > "Clear All Outputs" and save the notebook.
 
-## Courses
+## Completed Courses
 
-- Data Manipulation with Pandas
 - Data Types for Data Science in Python
-- Exploratory Data Analysis in Python
 - Intermediate Python
 - Introduction to Data Science in Python
 - Introduction to Data Visualization with Matplotlib
@@ -66,3 +64,11 @@ Before committing Jupyter notebook changes to the git repository, click on
 - Python Data Science Toolbox Part 1
 - Python Data Science Toolbox Part 2
 - Statistical Thinking in Python Part 1
+
+## Courses in Progress
+
+- Data Manipulation with Pandas
+- Exploratory Data Analysis in Python
+- Statistical Thinking in Python Part 2
+- Writing Functions in Python
+
