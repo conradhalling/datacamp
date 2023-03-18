@@ -50,4 +50,5 @@ Before committing Jupyter notebook changes to the git repository, click on
 - Data Manipulation with Pandas
 - Introduction to Databases in Python
 - Introduction to NumPy
+- Introductionn to Python
 - Statistical Thinking in Python Part 1
