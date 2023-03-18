@@ -54,4 +54,5 @@ Before committing Jupyter notebook changes to the git repository, click on
 - Introduction to NumPy
 - Introductionn to Python
 - Object-Oriented Programming in Python
+- Python Data Science Toolbox Part 1
 - Statistical Thinking in Python Part 1
