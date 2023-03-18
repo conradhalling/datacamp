@@ -3,6 +3,7 @@ setuptools
 jupyterlab
 matplotlib
 pandas
+pendulum
 psycopg2
 pymysql
 scikit-learn
