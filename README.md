@@ -64,6 +64,7 @@ Before committing Jupyter notebook changes to the git repository, click on
 - Python Data Science Toolbox Part 1
 - Python Data Science Toolbox Part 2
 - Statistical Thinking in Python Part 1
+- Working with Dates and Times in Python
 
 ## Courses in Progress
 
