@@ -2,16 +2,24 @@
 
 ## Introduction
 
-This repository contains my code from DataCamp tutorials. These instructions assume
-Python 3.11.1 was installed using pyenv.
+This repository contains my code from DataCamp tutorials.
+
+These instructions assume the following:
+
+- you're running macOS 13.2.1
+- you have used Homebrew to install pyenv
+- you have installed Python 3.11.1 using pyenv
 
 ## Setting Up
+
+The requirements.txt file includes all of the packages needed for the
+courses included in this repository.
+
+Use these steps to set up:
 
 - clone the repository
 - install the hdf5 library
 - create a virtual environment and install the required packages
-- initialize the virtual environment
-- start Jupyter Lab
 
 ```shell
 # Clone the repository.
@@ -23,7 +31,7 @@ brew install hdf5
 
 # Create a virtual environment.
 pyenv global 3.11.1
-cd datacamp
+cd ~/src/conradhalling/datacamp
 python3 -m venv venv
 
 # Activate the virtual environment.
@@ -32,9 +40,14 @@ source venv/bin/activate
 # Install required packages.
 pip install --upgrade pip setuptools
 pip install -r requirements.txt
+
+# Deactivate the virtual environment if desired.
+deactivate
 ```
 
 ## Using the Notebooks
+
+### Starting Jupyter Lab
 
 - initialize the virtual environment
 - start Jupyter Lab
@@ -45,10 +58,11 @@ source venv/bin/activate
 python3 -Xfrozen_modules=off -m jupyterlab
 ```
 
-## Saving a Notebook
+### Saving a Notebook
 
 Before committing Jupyter notebook changes to the git repository, click on
-"Edit" > "Clear All Outputs" and save the notebook.
+"Edit" > "Clear All Outputs" and save the notebook. This strips output data
+from the notebook, making `git diff` results easier to understand.
 
 ## Completed Courses
 
@@ -78,4 +92,3 @@ Before committing Jupyter notebook changes to the git repository, click on
 - Exploratory Data Analysis in Python
 - Statistical Thinking in Python Part 2
 - Writing Functions in Python
-
