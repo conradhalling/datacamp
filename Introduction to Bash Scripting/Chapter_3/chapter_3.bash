@@ -181,7 +181,14 @@ done
 # to see if it is a Python file (ends in .py) AND contains
 # RandomForestClassifier. If so, copy it into the to_keep/ directory.
 
-# Clean up first.
+echo
+echo "Preparing data files..."
+cd data
+rm -rf robs_files
+rm -rf __MACOSX
+unzip robs_files.zip
+cd ..
+
 rm -rf to_keep
 mkdir to_keep
 
