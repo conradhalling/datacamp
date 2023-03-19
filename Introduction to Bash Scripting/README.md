@@ -1,16 +1,16 @@
 # Introduction to Bash Scripting
 
-## Chapter 1
-
-### Notes
-
-All data files are located in Chapter_1/data.
-
 I modified all bash scripts to include
 
 ```shell
 set -euo pipefail
 ```
+
+## Chapter 1
+
+### Notes
+
+All data files are located in Chapter_1/data.
 
 ### Run Main Script
 
@@ -25,12 +25,6 @@ bash chapter_1.bash
 
 All data files are located in Chapter_2/data.
 
-I modified all bash scripts to include
-
-```shell
-set -euo pipefail
-```
-
 ### Run Main Script
 
 ```shell
@@ -38,3 +32,15 @@ cd Chapter_2
 bash chapter_2.bash
 ```
 
+## Chapter 3
+
+### Notes
+
+All data files are located in Chapter_3/data.
+
+### Run Main Script
+
+```shell
+cd Chapter_3
+bash chapter_3.bash
+```

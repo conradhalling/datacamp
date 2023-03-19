@@ -1,0 +1,6 @@
+# Output files to ignore.
+good_logs/
+to_keep/
+data/__MACOSX/
+data/model_out/
+
