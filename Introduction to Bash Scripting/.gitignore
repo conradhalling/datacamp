@@ -1,0 +1,5 @@
+# Project-specific output files to ignore.
+Chapter_1/Tallinn.csv
+Chapter_1/Seoul.csv
+Chapter_1/soccer_scores_edited.csv
+
