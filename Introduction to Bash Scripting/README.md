@@ -4,7 +4,7 @@
 
 ### Notes
 
-All data files are located in the Chapter_1/data subdirectory.
+All data files are located in Chapter_1/data.
 
 I modified all bash scripts to include
 
@@ -35,6 +35,6 @@ set -euo pipefail
 
 ```shell
 cd Chapter_2
-bash chapter2_bash
+bash chapter_2.bash
 ```
 
