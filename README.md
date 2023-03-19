@@ -64,7 +64,9 @@ Before committing Jupyter notebook changes to the git repository, click on
 "Edit" > "Clear All Outputs" and save the notebook. This strips output data
 from the notebook, making `git diff` results easier to understand.
 
-## Completed Courses
+## Courses and Projects
+
+### Completed Courses
 
 - Data Types for Data Science in Python
 - Intermediate Python
@@ -81,11 +83,11 @@ from the notebook, making `git diff` results easier to understand.
 - Statistical Thinking in Python Part 1
 - Working with Dates and Times in Python
 
-## Completed Project
+### Completed Project
 
 - Investigating Netflix Movies
 
-## Courses in Progress
+### Courses in Progress
 
 - Data Manipulation with Pandas
 - Data Processing in Shell
