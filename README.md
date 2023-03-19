@@ -54,6 +54,7 @@ Before committing Jupyter notebook changes to the git repository, click on
 
 - Data Types for Data Science in Python
 - Intermediate Python
+- Introduction to Bash Scripting
 - Introduction to Data Science in Python
 - Introduction to Data Visualization with Matplotlib
 - Introduction to Databases in Python
@@ -66,9 +67,14 @@ Before committing Jupyter notebook changes to the git repository, click on
 - Statistical Thinking in Python Part 1
 - Working with Dates and Times in Python
 
+## Completed Project
+
+-- Investigating Netflix Movies
+
 ## Courses in Progress
 
 - Data Manipulation with Pandas
+- Data Processing in Shell
 - Exploratory Data Analysis in Python
 - Statistical Thinking in Python Part 2
 - Writing Functions in Python
