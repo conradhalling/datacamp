@@ -69,7 +69,7 @@ Before committing Jupyter notebook changes to the git repository, click on
 
 ## Completed Project
 
--- Investigating Netflix Movies
+- Investigating Netflix Movies
 
 ## Courses in Progress
 
