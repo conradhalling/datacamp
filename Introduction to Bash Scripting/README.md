@@ -44,3 +44,16 @@ All data files are located in Chapter_3/data.
 cd Chapter_3
 bash chapter_3.bash
 ```
+
+## Chapter 4
+
+### Notes
+
+All data files are located in Chapter_4/data. Some files were not used.
+
+### Run Main Script
+
+```shell
+cd Chapter_4
+bash chapter_4.bash
+```
