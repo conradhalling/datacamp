@@ -2,7 +2,8 @@
 
 ## Introduction
 
-This repository contains my code from DataCamp tutorials.
+This repository contains my code from DataCamp classes, projects, and
+tutorials..
 
 These instructions assume the following:
 
@@ -94,3 +95,8 @@ from the notebook, making `git diff` results easier to understand.
 - Exploratory Data Analysis in Python
 - Statistical Thinking in Python Part 2
 - Writing Functions in Python
+
+### Tutorial in Progress
+
+- Principal Component Analysis in Python
+
