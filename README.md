@@ -3,7 +3,7 @@
 ## Introduction
 
 This repository contains my code from DataCamp classes, projects, and
-tutorials..
+tutorials.
 
 These instructions assume the following:
 
@@ -18,12 +18,12 @@ courses included in this repository.
 
 Use these steps to set up:
 
-- clone the repository
+- clone this repository
 - install the hdf5 library
 - create a virtual environment and install the required packages
 
 ```shell
-# Clone the repository.
+# Clone this repository.
 cd ~/src/conradhalling
 git clone https://github.com/conradhalling/datacamp.git
 
@@ -56,7 +56,7 @@ deactivate
 ```shell
 cd ~/src/conradhalling/datacamp
 source venv/bin/activate
-python3 -Xfrozen_modules=off -m jupyterlab
+jupyter lab
 ```
 
 ### Saving a Notebook
@@ -99,4 +99,3 @@ from the notebook, making `git diff` results easier to understand.
 ### Tutorial in Progress
 
 - Principal Component Analysis in Python
-
