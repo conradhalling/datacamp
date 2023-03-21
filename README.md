@@ -69,33 +69,33 @@ from the notebook, making `git diff` results easier to understand.
 
 ### Completed Courses
 
-- Data Types for Data Science in Python
-- Intermediate Python
-- Introduction to Bash Scripting
-- Introduction to Data Science in Python
-- Introduction to Data Visualization with Matplotlib
-- Introduction to Databases in Python
-- Introduction to Importing Data in Python
-- Introduction to NumPy
-- Introductionn to Python
-- Object-Oriented Programming in Python
-- Python Data Science Toolbox Part 1
-- Python Data Science Toolbox Part 2
-- Statistical Thinking in Python Part 1
-- Working with Dates and Times in Python
+- [Data Types for Data Science in Python](Data%20Types%20for%20Data%20Science%20in%20Python)
+- [Intermediate Python](Intermediate%20Python)
+- [Introduction to Bash Scripting](Introduction%20to%20Bash%20Scripting)
+- [Introduction to Data Science in Python](Introduction%20to%20Data%20Science%20in%20Python)
+- [Introduction to Data Visualization with Matplotlib](Introduction%20to%20Data%20Visualization%20with%20Matplotlib)
+- [Introduction to Databases in Python](Introduction%20to%20Databases%20in%20Python)
+- [Introduction to Importing Data in Python](Introduction%20to%20Importing%20Data%20in%20Python)
+- [Introduction to NumPy](Introduction%20to%20NumPy)
+- [Introduction to Python](Introduction%20to%20Python)
+- [Object-Oriented Programming in Python](Object-Oriented%20Programming%20in%20Python)
+- [Python Data Science Toolbox Part 1](Python%20Data%20Science%20Toolbox%20Part%201)
+- [Python Data Science Toolbox Part 2](Python%20Data%20Science%20Toolbox%20Part%202)
+- [Statistical Thinking in Python Part 1](Statistical%20Thinking%20in%20Python%20Part%201)
+- [Working with Dates and Times in Python](Working%20with%20Dates%20and%20Times%20in%20Python)
 
 ### Completed Project
 
-- Investigating Netflix Movies
+- [Investigating Netflix Movies](Investigating%20Netflix%20Movies)
 
 ### Courses in Progress
 
-- Data Manipulation with Pandas
-- Data Processing in Shell
-- Exploratory Data Analysis in Python
-- Statistical Thinking in Python Part 2
-- Writing Functions in Python
+- [Data Manipulation with Pandas](Data%20Manipulation%20with%20Pandas)
+- [Data Processing in Shell](Data%20Processing%20in%20Shell)
+- [Exploratory Data Analysis in Python](Exploratory%20Data%20Analysis%20in%20Python)
+- [Statistical Thinking in Python Part 2](Statistical%20Thinking%20in%20Python%20Part%202)
+- [Writing Functions in Python](Writing%20Functions%20in%20Python)
 
 ### Tutorial in Progress
 
-- Principal Component Analysis in Python
+- [Principal Component Analysis in Python](Principal%20Component%20Analysis%20in%20Python)
