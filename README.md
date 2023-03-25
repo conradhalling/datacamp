@@ -16,7 +16,7 @@ These instructions were tested with:
 The requirements.txt file includes all of the packages needed for the
 courses included in this repository.
 
-Use these steps to set up:
+Open a Terminal window and enter these commands to set up:
 
 ```shell
 # Clone this repository.
@@ -45,7 +45,7 @@ deactivate
 
 ### Starting Jupyter Lab
 
-Use these steps to start Jupyter Lab:
+In a Terminal window, enter these commands to start Jupyter Lab:
 
 ```shell
 # Initialize the virtual environment.
@@ -89,7 +89,7 @@ from the notebook, making `git diff` results easier to understand.
 
 - [Data Manipulation with Pandas](Data%20Manipulation%20with%20Pandas)
 - [Data Processing in Shell](Data%20Processing%20in%20Shell)
-- [Exploratory Data Analysis in Python](Exploratory%20Data%20Analysis%20in%20Python)
+- [Exploring and Analyzing Data in Python](Exploring%20and%20Analyzing%20Data%20in%20Python)
 - [Statistical Thinking in Python Part 2](Statistical%20Thinking%20in%20Python%20Part%202)
 - [Writing Functions in Python](Writing%20Functions%20in%20Python)
 
