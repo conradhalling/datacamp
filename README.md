@@ -18,10 +18,6 @@ courses included in this repository.
 
 Use these steps to set up:
 
-- clone this repository
-- install the hdf5 library
-- create a virtual environment and install the required packages
-
 ```shell
 # Clone this repository.
 cd ~/src/conradhalling
@@ -49,12 +45,14 @@ deactivate
 
 ### Starting Jupyter Lab
 
-- initialize the virtual environment
-- start Jupyter Lab
+Use these steps to start Jupyter Lab:
 
 ```shell
+# Initialize the virtual environment.
 cd ~/src/conradhalling/datacamp
 source venv/bin/activate
+
+# Start Jupyter Lab.
 jupyter lab
 ```
 
