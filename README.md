@@ -5,11 +5,11 @@
 This repository contains my code from DataCamp classes, projects, and
 tutorials.
 
-These instructions assume the following:
+These instructions were tested with:
 
-- you're running macOS 13.2.1
-- you have used Homebrew to install pyenv
-- you have installed Python 3.11.1 using pyenv
+- macOS 13.2.1
+- Homebrew-installed pyenv 2.3.16
+- pyenv-installed Python 3.11.2
 
 ## Setting Up
 
@@ -27,19 +27,18 @@ Use these steps to set up:
 cd ~/src/conradhalling
 git clone https://github.com/conradhalling/datacamp.git
 
-# Install the hdf5 library
+# Install the hdf5 library.
 brew install hdf5
 
 # Create a virtual environment.
-pyenv global 3.11.1
 cd ~/src/conradhalling/datacamp
-python3 -m venv venv
+pyenv local 3.11.2
+python -m venv venv --upgrade-deps
 
 # Activate the virtual environment.
 source venv/bin/activate
 
 # Install required packages.
-pip install --upgrade pip setuptools
 pip install -r requirements.txt
 
 # Deactivate the virtual environment if desired.
