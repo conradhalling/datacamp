@@ -90,6 +90,7 @@ from the notebook, making `git diff` results easier to understand.
 - [Data Manipulation with Pandas](Data%20Manipulation%20with%20Pandas)
 - [Data Processing in Shell](Data%20Processing%20in%20Shell)
 - [Exploring and Analyzing Data in Python](Exploring%20and%20Analyzing%20Data%20in%20Python)
+- [Introduction to Git](Introduction%20to%20Git)
 - [Statistical Thinking in Python Part 2](Statistical%20Thinking%20in%20Python%20Part%202)
 - [Writing Functions in Python](Writing%20Functions%20in%20Python)
 
