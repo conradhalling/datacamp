@@ -85,6 +85,7 @@ For formatting math symbols in Jupyter notebooks and creating PDF files, see
 - [Python Data Science Toolbox Part 2](Python%20Data%20Science%20Toolbox%20Part%202)
 - [Statistical Thinking in Python Part 1](Statistical%20Thinking%20in%20Python%20Part%201)
 - [Working with Dates and Times in Python](Working%20with%20Dates%20and%20Times%20in%20Python)
+- [Writing Functions in Python](Writing%20Functions%20in%20Python)
 
 ### Completed Project
 
@@ -97,7 +98,6 @@ For formatting math symbols in Jupyter notebooks and creating PDF files, see
 - [Exploring and Analyzing Data in Python](Exploring%20and%20Analyzing%20Data%20in%20Python)
 - [Introduction to Git](Introduction%20to%20Git)
 - [Statistical Thinking in Python Part 2](Statistical%20Thinking%20in%20Python%20Part%202)
-- [Writing Functions in Python](Writing%20Functions%20in%20Python)
 
 ### Tutorial in Progress
 
