@@ -62,6 +62,11 @@ Before committing Jupyter notebook changes to the git repository, click on
 "Edit" > "Clear All Outputs" and save the notebook. This strips output data
 from the notebook, making `git diff` results easier to understand.
 
+### Formatting Math Symbols
+
+For formatting math symbols in Jupyter notebooks and creating PDF files, see
+[Formatting Math Symbols](Formatting%20Math%20Symbols).
+
 ## Courses and Projects
 
 ### Completed Courses
