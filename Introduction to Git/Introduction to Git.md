@@ -20,9 +20,56 @@ There are no datasets for this course.
 
 ### Introduction to Version Control
 
+#### What is a Version?
+
+- Contents of a file at a given point in time.
+- Metadata (information associated with the file)
+    - the author of the file
+    - where the file is located
+    - the file type
+    - when the file was last saved
+
+#### What is Version Control?
+
+- Version control is a group of systems and process that
+    - manage changes made to documents, programs, and directories
+- Version control is useful for anything that
+    - changes over time
+    - needs to be shared
+- Version control tracks files in different states
+- Version control allows simultaneous file development (continuous development)
+- Version control allows us to combine different versions of files
+
 #### Why is Version Control Important?
 
 Version control can be used to synchronize scripts or analysis pipelines with the data used at that time. The analysis evolves as the data set changes. Version control makes it possible to rerun a particular analysis using the correct code and data.
+
+#### Git and GitHub
+
+Git is:
+
+- a popular version control system for computer programming and data projects
+- open source
+- scalable
+
+GitHub is:
+
+- a cloud-based Git repository system
+
+#### Benefits of Git
+
+The benefits of Git are:
+
+- Git stores everything, so nothing is lost
+- Git notifies us when there is conflicting content in files
+- Git can synchronize work done by different people using different computers
+
+#### Using Git
+
+- Git commands are run in the shell
+- The shell
+    - is a program for executing commands
+    - can be used to view or modify files and directories (folders)
 
 #### Useful Shell Commands
 
@@ -33,50 +80,169 @@ Version control can be used to synchronize scripts or analysis pipelines with th
 - echo
 - git --version
 
+#### Using the Shell (Exercise)
+
+Use the `ls` command to identify files and directories in the data directory.
+
+```shell
+ls data
+```
+
+#### Checking the Version of Git.
+
+```shell
+git --version
+```
+
 ### Saving Files
 
-Save a draft of a file to the staging area. This is like placing a letter in the envelope.
+#### The Repository
 
-Save a file and update the repository by committing changes from the staging area. This is like sealing the envelope and mailing it.
+We'll be working with a project about mental health in tech throughout the course.
 
-### Git Workflow
+Files: `funding.doc`, `report.md`
 
-Repeat these steps.
+Directories: `data`, `.git`
+
+These files and directories are stored in a repository (a "repo"), where the metadata about the repository is stored in the `.git` directory. Do not change the files or directories in the `.git` directory.
+
+#### Staging and Committing
+
+Saving a draft of a file to the staging area is like placing a letter in the envelope.
+
+Saving a file and updating the repository by committing changes from the staging area is like sealing the envelope and mailing it.
+
+#### Accessing the .git Directory
+
+```shell
+# List all files in the current working directory.
+ls -a
+# List files and directories in the .git directory.
+ls .git
+```
+
+#### Git Workflow
+
+1. Modify a file one or more times
+2. Repeat step 1 as desired
+3. Save the draft to the staging area
+4. Repeat steps 1 through 3 as desired
+5. Commit the updated file to the repository
+6. Repeat steps 1 through 6 as desired
+
+#### Modifying a File
+
+Open the file with the `nano` editor and add three lines. Save the changes with `control+o` and `control+x`.
 
 ```shell
 # Modify a file.
-nano filename
-# Stage the modified file/all files and directories.
-git add filename
+nano report.md
+# Stage the modified file.
+git add report.md
+# Stage all modified files.
 git add .
 # Commit the file's changes to the repository.
-git commit -m "Commit message"
+git commit -m "Updating TODO list in report.md"
 
 # Check the status of the repo.
 git status
 ```
 
-### Comparing Files
+#### Where Does Git Store Information? (Exercise)
+
+The home directory `/home/repl` contains a repository called `mh_survey`, which has a directory called `data`. Where does Git store the information about the history of the files in `/home/repl/mh_survey/data`?
+
+In `/home/repl/mh_survey/.git`.
+
+#### The Git Workflow (Exercise)
+
+Drag the items into the correct buckets:
+
+- Modify
+    - `nano filename`
+    - `echo "code and/or data" >> filename`
+- Draft
+    - `git add filename`
+    - `git add .`
+- Save
+    - `git commit -m "Commit message"`
+
+#### Adding a File (Exercise)
+
+You are located in the `mh_survey/data` directory, which contains the file `mental_health_survey.csv`. Add a new row of data to the end of `mental_health_survey.csv`. Place the updated file in the staging area. Commit the modified file.
 
 ```shell
-# Update a file and commit the change.
+nano mental_health_survey.csv
+git add mental_health_survey.csv
+git commit -m "Adding one new participant's data"
+```
+
+#### Adding Multiple Files (Exercise)
+
+You've modified two files, `report.md` and `data/mental_health_survey.css`.
+
+Check which files are in the staging area but not yet committed. Add all files in your current directory and all subdirectories into the staging area. Commit all files in the staging area.
+
+```shell
+git status
+git add .
+git commit -m "Added 3 participants and a new section in report."
+```
+
+### Comparing Files
+
+We need a way to compare versions as we're making changes.
+
+```shell
+# Start by updating a file and commiting the change.
 nano report.md
 git add .
-git commit -m "Commit message"
+git commit -m "Adding tasks for references and summary statistics in report.md"
 
-# Update the file again.
+# Edit the file again.
 nano report.md
 
 # Compare the unstaged file to the last committed version.
 git diff report.md
 
-# Compare a staged file to the repository version.
+# Compare a staged file to the repository version, where -r signifies
+# the revision and HEAD is a shortcut for the most recent revision.
 git add report.md
 git diff -r HEAD report.md
 
-# Compare all staged files to the repository version
+# Compare all staged files to the repository version.
 git diff -r HEAD
 ```
+
+#### What Has Changed? (Exercise)
+
+You have been placed in the `data` directory of the `mh_survey` repository. How many lines have been added to the current version of `mental_health_survey.csv` compared to the version in the latest commit?
+
+```shell
+git diff mental_health_survey.csv
+```
+
+One line has been added.
+
+#### What's Going to Be Committed? (Exercise)
+
+You have been put in the `mh_survey` repository, where `data/mental_health_survey.csv` has been added to the staging area. Use a command to see how *all* files differ from the last saved revision. Use a Git command to add `report.md` to the staging area. Commit all files.
+
+```shell
+git diff -r HEAD .
+git add report.md
+git commit -m "New participant data and reminder for analysis"
+```
+
+#### What's in the Staging Area? (Exercise)
+
+The `report.md` file has been stored in the staging area. What single command can you use to see the changes that have been made to the `report.md` file?
+
+```shell
+git diff -r HEAD report.md
+```
+
+********* I finished editing to this point. ***********
 
 ## Making Changes
 
