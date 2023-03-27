@@ -242,21 +242,118 @@ The `report.md` file has been stored in the staging area. What single command ca
 git diff -r HEAD report.md
 ```
 
-********* I finished editing to this point. ***********
-
 ## Making Changes
 
 I cloned a repository for experimentation. When I was finished, I deleted the directory.
 
 ### Storing Data with Git
 
+#### The Commit Structure
+
+Git commits have three parts:
+
+- Commit
+    - contains the metadata
+    - each commit has a unique identifier, the hash
+- Tree
+    - tracks the names and locations in the repository
+    - the tree points to blobs from various commits, one blob per file
+- Blob
+    - binary large object for each file in the tree
+    - may contain data of any kind
+    - compressed snapshot of a file's contents
+
+#### View Commit Information
+
 ```shell
 # View the log of commits to the repo.
+# Press the spacebar to scroll through the logs. Press "q" to quit.
 git log
+# Show names and statuses of files changed by the commit.
+git log --name-status
 
 # Show information about a commit; use the first 6-8 characters of the hash
 git show 5620f0e
 ```
+
+#### The Git Hash
+
+The Git hash is a 40-character string that is the SHA-1 hash — a checksum of the content you’re storing plus a header. See https://git-scm.com/book/en/v2/Git-Internals-Git-Objects.
+
+George states that, "It is called a hash because Git produces it using a pseudo-random number generator called a hash function." I don't think this is correct.
+
+Hashes allow data sharing between repositories. They serve as virtually unique identifiers for a blob. This means git only needs to compare the hashes of two blobs to determine whether the blobs are identical.
+
+#### Finding a Particular Commit
+
+Use `git log` to view the log of commits. Use `git show` to view the details of a single commit, supplying a revision identifier. See `man 7 gitrevisions` for more information about revision identifiers.
+
+    $ git log
+    commit 41d14d7db4280073eddfa8c59d9043aad3de8583 (HEAD -> main, origin/main, origin/HEAD)
+    Author: Conrad Halling <conrad.halling@icloud.com>
+    Date:   Mon Mar 27 07:18:27 2023 -0400
+
+        Introduction to Git.
+
+        Finished notes for Chapter 1.
+
+    $ git show 41d14d7
+    commit 41d14d7db4280073eddfa8c59d9043aad3de8583 (HEAD -> main, origin/main, origin/HEAD)
+    Author: Conrad Halling <conrad.halling@icloud.com>
+    Date:   Mon Mar 27 07:18:27 2023 -0400
+
+        Introduction to Git.
+
+        Finished notes for Chapter 1.
+
+    diff --git a/Introduction to Git/Introduction to Git.md b/Introduction to Git/Introduction to Git.md
+    index 73d535b..923e08f 100644
+    --- a/Introduction to Git/Introduction to Git.md
+    +++ b/Introduction to Git/Introduction to Git.md
+    @@ -20,10 +20,57 @@ There are no datasets for this course.
+
+    ### Introduction to Version Control
+
+    +#### What is a Version?
+    +
+    +- Contents of a file at a given point in time.
+    +- Metadata (information associated with the file)
+    +    - the author of the file
+    +    - where the file is located
+    [more output omitted]
+
+#### Interpreting the Commit Structure (Exercise)
+
+What is the commit hash for the last updated version of `report.md`? The commit hash for the latest version of `report.md` is ebe93178.
+
+#### Viewing a Repository's History (Exercise)
+
+Use a command to find the hash of the most recent commit. The command `git log` shows that commit 7f71eade is the most recent, because `git log` returns the commits in reverse chronological order. However, the course erroneously states that 7f71eade is the earliest commit.
+
+#### Viewing a Specific Commit (Exercise)
+
+The second question was: "Use the hash from the second most recent commit to display the difference between report.md in that commit versus the latest version."
+
+It turns out this is not looking for a `git diff` command but a `git show` command.
+
+According to the `git log` output, the second most recent commit of report.md has commit ID e39ecc8, since the log is reported in reverse chronological order. The correct answer, according to the course, was:
+
+```shell
+git show 36b761
+```
+
+These are the correct commands, not accepted by the course:
+
+```shell
+git log report.md
+# This answer creates the requested results but was not accepted.
+git diff e39ecc8..36by61e report.md
+git diff e39ecc8 36b761e report.md
+git diff e39ecc8 HEAD report.md
+git show e39ecc8
+```
+
+**************** I worked to this point. ***************
 
 ### Viewing Changes
 
