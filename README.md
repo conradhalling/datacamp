@@ -7,7 +7,7 @@ tutorials.
 
 These instructions were tested with:
 
-- macOS 13.2.1
+- macOS 13.3
 - Homebrew-installed pyenv 2.3.16
 - pyenv-installed Python 3.11.2
 
@@ -20,6 +20,7 @@ Open a Terminal window and enter these commands to set up:
 
 ```shell
 # Clone this repository.
+mkdir -p ~/src/conradhalling
 cd ~/src/conradhalling
 git clone https://github.com/conradhalling/datacamp.git
 
@@ -77,6 +78,7 @@ For formatting math symbols in Jupyter notebooks and creating PDF files, see
 - [Introduction to Data Science in Python](Introduction%20to%20Data%20Science%20in%20Python)
 - [Introduction to Data Visualization with Matplotlib](Introduction%20to%20Data%20Visualization%20with%20Matplotlib)
 - [Introduction to Databases in Python](Introduction%20to%20Databases%20in%20Python)
+- [Introduction to Git](Introduction%20to%20Git)
 - [Introduction to Importing Data in Python](Introduction%20to%20Importing%20Data%20in%20Python)
 - [Introduction to NumPy](Introduction%20to%20NumPy)
 - [Introduction to Python](Introduction%20to%20Python)
@@ -96,7 +98,6 @@ For formatting math symbols in Jupyter notebooks and creating PDF files, see
 - [Data Manipulation with Pandas](Data%20Manipulation%20with%20Pandas)
 - [Data Processing in Shell](Data%20Processing%20in%20Shell)
 - [Exploring and Analyzing Data in Python](Exploring%20and%20Analyzing%20Data%20in%20Python)
-- [Introduction to Git](Introduction%20to%20Git)
 - [Statistical Thinking in Python Part 2](Statistical%20Thinking%20in%20Python%20Part%202)
 
 ### Tutorial in Progress
