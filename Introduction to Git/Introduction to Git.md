@@ -16,6 +16,14 @@ This course is part of these tracks:
 
 There are no datasets for this course.
 
+## Resources
+
+- DataCamp provides another Git tutorial at https://github.com/datacamp/courses-introduction-to-version-control-with-git
+- DataCamp's comprehensive web page for using git, including a Git cheat-sheet: https://www.datacamp.com/cheat-sheet/git-cheat-sheet
+- _Pro Git_ online book: https://git-scm.com/book/en/v2
+- GitHub Docs: https://docs.github.com/en
+- Learn Git with Bitbucket Cloud: https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
+
 ## Introduction to Git
 
 ### Introduction to Version Control
@@ -272,7 +280,8 @@ git log
 # Show names and statuses of files changed by the commit.
 git log --name-status
 
-# Show information about a commit; use the first 6-8 characters of the hash
+# Show information about a commit; use the first 6-8 characters of the hash.
+# The diff shows the differences from the previous commit.
 git show 5620f0e
 ```
 
@@ -286,7 +295,7 @@ Hashes allow data sharing between repositories. They serve as virtually unique i
 
 #### Finding a Particular Commit
 
-Use `git log` to view the log of commits. Use `git show` to view the details of a single commit, supplying a revision identifier. See `man 7 gitrevisions` for more information about revision identifiers.
+Use `git log` to view the log of commits.
 
     $ git log
     commit 41d14d7db4280073eddfa8c59d9043aad3de8583 (HEAD -> main, origin/main, origin/HEAD)
@@ -296,6 +305,10 @@ Use `git log` to view the log of commits. Use `git show` to view the details of 
         Introduction to Git.
 
         Finished notes for Chapter 1.
+
+#### Showing a Particular Commit
+
+Use `git show` to view the details of a single commit, supplying a revision identifier. See `man 7 gitrevisions` for more information about revision identifiers.
 
     $ git show 41d14d7
     commit 41d14d7db4280073eddfa8c59d9043aad3de8583 (HEAD -> main, origin/main, origin/HEAD)
@@ -322,6 +335,33 @@ Use `git log` to view the log of commits. Use `git show` to view the details of 
     +    - where the file is located
     [more output omitted]
 
+#### Viewing Changes (Extra)
+
+These are my additonal notes, working with one of my own repositories, for showing differences between various commits.
+
+```shell
+# Show the diff between the commit and the current HEAD.
+git diff HEAD~1 README.md
+git diff HEAD~2 README.md
+git diff 23e583a
+git diff 4fae206
+
+# Get the commit history for a single file.
+git log --name-status README.md
+
+# Show the diff between one commit and another.
+# Relative to the current HEAD. The relative indexes change with each commit.
+git diff HEAD~6 HEAD~3 README.md
+# Using absolute commit hashes.
+git diff 4fae206 23e583a README.md
+
+# Show the commit details for a given commit. The diff is from the
+# previous commit.
+git show HEAD~1
+git show HEAD~4 README.md
+git show 4fae206 README.md
+```
+
 #### Interpreting the Commit Structure (Exercise)
 
 What is the commit hash for the last updated version of `report.md`? The commit hash for the latest version of `report.md` is ebe93178.
@@ -342,7 +382,9 @@ According to the `git log` output, the second most recent commit of report.md ha
 git show 36b761
 ```
 
-These are the correct commands, not accepted by the course:
+The `git show` command displays the differences between the commit and the previous commit for the given file.
+
+These were the correct commands, not accepted by the course:
 
 ```shell
 git log report.md
@@ -352,8 +394,6 @@ git diff e39ecc8 36b761e report.md
 git diff e39ecc8 HEAD report.md
 git show e39ecc8
 ```
-
-**************** I worked to this point. ***************
 
 ### Viewing Changes
 
@@ -543,34 +583,305 @@ git merge update main
 
 ### Creating Repos
 
-#### Setting Up a New Rep (Exercise)
+#### Why Make a Repo?
+
+The benefits of repositories are:
+
+- you can systematically track versions
+- you can collaborate with colleagues
+- you can store everything
+
+#### Creating a New Repo
+
+Create a new (local) repository using the `git init` command.
+
+```shell
+git init mental-health-workspace
+cd mental-health-workspace
+git status
+```
+
+#### Converting a Project
+
+If you have already started your project, `cd` into your directory and use the `git init` command. The `git status` command will recognize that there are uncommitted files in the new git respository.
+
+```shell
+cd mh_survey
+git init
+git status
+git add .
+git commit -m "Initial commit"
+```
+
+#### Avoid Nested Repositories
+
+Do not create a Git repository inside another Git repository. If you do this, there will be two `.git` directories in different locations, and Git will get confused about which `.git` directory to update.
+
+#### Setting Up a New Repo (Exercise)
+
+Create a new Git repo named `anxiety_workplace` in the current directory (`projects`) and add a to-do list.
+
+```shell
+git init anxiety_workplace
+cd anxiety_workplace
+nano todo.txt
+git status
+```
 
 #### Converting an Existing Project (Exercise)
 
+You're in the `mh_survey` directory. Create a Git repository in the directory.
+
+```shell
+git init
+git status
+```
+
 ### Working with Remotes
 
-#### Cloning a Repo (Exercsie)
+A fundamental feature for collaboration is remote repositories, also known as "remotes". So far, we have worked only with local repositories. A remote repository is a repository stored in the cloud by an online repository service, such as github.com.
+
+These are the benefits of remote repositories:
+
+- Everything is backed up in the cloud
+- People can collaborate regardless of location
+
+#### Cloning Locally
+
+We can clone a local repository. To do this, we use the `git clone` command followed by the path to the project directory.
+
+```shell
+# Clone a local repository. This creates a directory named repo
+# in your current working directory.
+git clone /home/john/repo
+# Clone a local repository but into a directory with the specified name.
+git clone /home/john/repo new_repo.
+```
+
+#### Cloning a Remote Repository
+
+Remote repositories are stored in an online hosting service (e.g., GitHub, Bitbucket, or Gitlab).
+
+If we have a GitHub account, we can clone a remote repository to our local computer. This requires a GitHub URL, which can be obtained from the GitHub webpage for the remote repository. The repository in this example does not exist, but there are 184 other repositories for https://github.com/datacamp.
+
+```shell
+git clone https://github.com/datacamp/project.git
+```
+
+#### Identifying a Remote
+
+When cloning a remote repository, Git remembers where the original remote repository was. Git stores a remote tag in the new repository's configuration.
+
+```shell
+git remote
+git remote -v
+```
+
+#### Creating a Remote
+
+When cloning, Git will automatically name the remote `origin`.
+
+Add a remote to a repository using this example:
+
+```shell
+git remote add george https://github.com/george_datacamp/repo
+```
+
+Defining remote names is useful for merging branches.
+
+#### Cloning a Repo (Exercise)
+
+Clone a repository from `/home/john/repo` into your current directory, `projects`, naming the cloned repository `john_anxiety_project`.
+
+```shell
+git clone /home/john/repo john_anxiety_project
+```
 
 #### Defining and Identifying Remotes
 
+You are in the directory `projects`, which contains `john_anxiety_project`. Name the repository as `john` to serve as a shortcut when working between branches going forward.
+
+```shell
+git remote add john /home/john/repo
+git remote -v
+```
+
+I didn't think this was a good example because directory `projects` contained a Git repository with no remote repository at the beginning of the exercise, and `projects/john_anxiety_project` also contained a Git repository.
+
+For managing remote repositories, see https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes.
+
 ### Gathering from a Remote
+
+Collaborators pull data from a remote repository into a local repository, work in their local repositories, and later synchronize their local repositories with the remote repository. This means the remote repository is the source of truth for the collaborators.
+
+#### Remove vs. Local
+
+Say we have been working in a branch of our local repo, but others have been working in the remote. It is clear that there are additional files and subdirectories in the remote. The unspoken assumption in this scenario is that the local repository was cloned from the remote repository and time has passed since then, so that new files have been added to the remote repository that are not in the local repository.
+
+#### Fetching from a Remote
+
+Fetch data from branch `main` of the remote repository.
+
+```shell
+git fetch origin main
+```
+
+#### Synchronizing Content
+
+Synchronize the data from the remote repository with your local repository.
+
+```shell
+git merge origin main
+```
+
+#### Pulling from a Remote
+
+The workflow of `fetch` and `merge` is common; these are combined into the `pull` command.
+
+```shell
+git pull origin main
+```
+
+#### Pulling with Unsaved Local Changes
+
+Git will not allow you to `pull` or `merge` if that will overwrite unsaved changes in your local repository. You must commit your local changes first.
 
 #### Fetching from a Remote (Exercise)
 
+The instructions for step 1 are: Run a command to find out the name(s) of remote repos linked to your project.
+
+The instructions for step 2 are: Gather contents from the remote `origin` repo into your local `main` branch. When you execute the `git fetch origin main` command, this is *not* what actually happens. The contents of the remote `origin` repo are fetched, but they are not fetched into your local `main` branch; that requires a `merge` command.
+
+The instructions for step 3 are: Compare the remote repo with your local `main` branch.
+
+```shell
+git remote
+git fetch origin main
+git diff origin main
+```
+
 #### Pulling from a Remote (Exercise)
+
+Fetching is useful, but if you want to bring your local repo's main branch in line with a remote repo, origin, this is possible with a single command!
+
+In this exercise, you'll work on a file while synchronizing between local and remote repos.
+
+    $ git pull origin mainremote: Counting objects: 3, done.
+    remote: Compressing objects: 100% (2/2), done.remote: Total 3 (delta 0), reused 0 (delta 0)
+    Unpacking objects: 100% (3/3), done.
+    From /home/john/repo
+    * branch            main       -> FETCH_HEAD
+    ebcea98..3b84962  main       -> origin/main
+    Updating ebcea98..3b84962
+    Fast-forward
+    protocol.md | 2 ++
+    1 file changed, 2 insertions(+)
+    create mode 100644 protocol.md
+    $ nano protocol.md
+    $ git add protocol.md
+    $ git commit -m "Updating eligibility criteria"
+    [main bb8a0dc] Updating eligibility criteria
+    1 file changed, 1 insertion(+)
+    $
+
+The course provided this comment when the exercise was complete:
+
+> Perfect pulling! Notice you received the output 1 file changed, 1 insertion(+), highlighting that the remote was ahead of your local repo!
+
+That was inaccurate. This message indicated the changes that were made to the local repository, which is now one commit ahead of the remote repository. A `git push` command will synchronize the change in the local repository to the remote repository.
+
+I am frustrated by the inaccuracies in this course.
+
+In summary, the commands were:
+
+```shell
+git pull origin main
+nano protocol.md
+git add protocol.md
+git commit -m "Updating eligibility criteria"
+```
 
 ### Pushing to a Remote
 
+#### git push
+
+Use the `git push` command to synchronize the remote repository with the changes we have made in the local repository.
+
+```shell
+git push origin main
+```
+
+#### Push/Pull Workflow
+
+- pull changes from the remote repo into the local repo
+- make and commit changes in the local repo
+- push changes from the local repo to the remote repo
+
+#### Remote/Local Conflicts
+
+Git protects us by making sure we have pulled changes from the remote repository before we push local changes to the remote repository.
+
+#### Resolving a Conflict
+
+When Git must make a merge using the "recursive" strategy, Git requires a commit message for the merge. The course call this "resolving a conflict", but it's not resolving a conflict the way I think of it.
+
 #### Pushing to a Remote Repo (Exercise)
+
+>You've noticed that the budget tracker has some errors, so you decide this needs to be added to the issue_log.txt file, along with adding an action to report.md. You want to push the updated files to John's remote repo called origin so he is aware of the issue and the next steps.
+
+    $ git add issue_log.txt report.md
+
+    $ git commit -m "Budget inaccuracy added to the issue log and report"
+    [main 9ca6454] Budget inaccuracy added to the issue log and report
+     2 files changed, 4 insertions(+)
+     create mode 100644 issue_log.txt
+
+    $ git push origin main
+    Counting objects: 4, done.
+    Delta compression using up to 8 threads.
+    Compressing objects: 100% (4/4), done.
+    Writing objects: 100% (4/4), 527 bytes | 527.00 KiB/s, done.Total 4 (delta 1), reused 0 (delta 0)
+    To /home/john/repo
+        3b84962..9ca6454  main -> main
 
 #### Handling Conflicts (Exercise)
 
+>Remote repos enable collaboration in Git, but it is important to regularly synchronize your local repo. In this exercise, you'll see what happens when they aren't aligned, and how to deal with this scenario.
+
+Step 2 required entering a commit message; I used the default message.
+
+    $ git push origin main
+    To /home/john/repo
+     ! [rejected]        main -> main (fetch first)
+    error: failed to push some refs to '/home/john/repo'
+    hint: Updates were rejected because the remote contains work that you do
+    hint: not have locally. This is usually caused by another repository pushing
+    hint: to the same ref. You may want to first integrate the remote changes
+    hint: (e.g., 'git pull ...') before pushing again.
+    hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+    $ git pull origin main
+    remote: Counting objects: 3, done.
+    remote: Compressing objects: 100% (3/3), done.
+    remote: Total 3 (delta 0), reused 0 (delta 0)
+    Unpacking objects: 100% (3/3), done.
+    From /home/john/repo
+     * branch            main       -> FETCH_HEAD
+       ebcea98..e8f3386  main       -> origin/main
+    Merge made by the 'recursive' strategy.
+     proposal.md | 2 ++
+     1 file changed, 2 insertions(+)
+     create mode 100644 proposal.md
+
+    $ git push origin main
+    Counting objects: 5, done.
+    Delta compression using up to 8 threads.
+    Compressing objects: 100% (4/4), done.
+    Writing objects: 100% (5/5), 597 bytes | 597.00 KiB/s, done.
+    Total 5 (delta 1), reused 0 (delta 0)
+    To /home/john/repo
+    e8f3386..5c41bfb  main -> main
+
 ### Congratulations!
 
-## Not Included in the Course
-
-Show the names and status of changed files. This is useful for my personal log files.
-
-```shell
-git log --name-status
-```
+Git cheat sheet: https://www.datacamp.com/cheat-sheet/git-cheat-sheet
