@@ -95,9 +95,9 @@ For formatting math symbols in Jupyter notebooks and creating PDF files, see
 
 ### Courses in Progress
 
-- [Developing Python Packages](Developing%20Python%20Packages)
 - [Data Manipulation with Pandas](Data%20Manipulation%20with%20Pandas)
 - [Data Processing in Shell](Data%20Processing%20in%20Shell)
+- [Developing Python Packages](Developing%20Python%20Packages)
 - [Exploring and Analyzing Data in Python](Exploring%20and%20Analyzing%20Data%20in%20Python)
 - [Statistical Thinking in Python Part 2](Statistical%20Thinking%20in%20Python%20Part%202)
 
