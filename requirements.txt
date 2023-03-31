@@ -14,4 +14,4 @@ openpyxl
 statsmodels
 tables
 empiricaldist
-
+black
