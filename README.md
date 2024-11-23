@@ -7,33 +7,37 @@ tutorials.
 
 These instructions were tested with:
 
-- macOS 13.3
-- Homebrew-installed pyenv 2.3.16
-- pyenv-installed Python 3.11.2
+- Python 3.12.x
+- macOS 15.1.x
 
 ## Setting Up
 
 The requirements.txt file includes all of the packages needed for the
 courses included in this repository.
 
-Open a Terminal window and enter these commands to set up:
+### macOS
+
+These setup instructions require that you install [homebrew](https://brew.sh).
+
+Open a Terminal or iTerm2 window and enter these commands:
 
 ```shell
+# Install Python 3.12 and the hdf5 library.
+brew install hdf5
+brew install python@3.12
+
 # Clone this repository.
 mkdir -p ~/src/conradhalling
 cd ~/src/conradhalling
 git clone https://github.com/conradhalling/datacamp.git
 
-# Install the hdf5 library.
-brew install hdf5
 
 # Create a virtual environment.
 cd ~/src/conradhalling/datacamp
-pyenv local 3.11.2
-python -m venv venv --upgrade-deps
+python3.12 -m venv venv312 --upgrade-deps
 
 # Activate the virtual environment.
-source venv/bin/activate
+source venv312/bin/activate
 
 # Install required packages.
 pip install -r requirements.txt
@@ -95,7 +99,7 @@ For formatting math symbols in Jupyter notebooks and creating PDF files, see
 
 ### Courses in Progress
 
-- [Data Manipulation with Pandas](Data%20Manipulation%20with%20Pandas)
+- [Data Manipulation with pandas](Data%20Manipulation%20with%20Pandas)
 - [Data Processing in Shell](Data%20Processing%20in%20Shell)
 - [Developing Python Packages](Developing%20Python%20Packages)
 - [Exploring and Analyzing Data in Python](Exploring%20and%20Analyzing%20Data%20in%20Python)
